@@ -4,7 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                sh 'sudo pip install -r requirements.txt'
+                sh 'whoami'
+                sh 'pip list'
+                sh 'pip install -r requirements.txt'
                 sh 'python hello-world.py'
             }
         }
