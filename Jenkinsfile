@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'for i in {1..5} do curl http://localhost done'
+                sh 'for i in {1..5} ; do curl http://localhost ; done'
             }
         }
     }
