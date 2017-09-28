@@ -4,11 +4,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'python --version && id'
+                sh 'ps -ef'
             }
         }
         stage('Test') {
             steps {
-                sh 'for i in {1..5} ; do curl http://localhost ; done'
+                sh 'while ! curl --output /dev/null --silent --head --fail http://localhost; do sleep 1 && echo -n .; done'
             }
         }
     }
