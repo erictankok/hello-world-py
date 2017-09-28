@@ -1,12 +1,14 @@
 pipeline {
-    agent { docker 'python:2.7-slim' }
+    agent { docker 'erictankok/docker:hello-world-py' }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
                 sh 'python --version && id'
-                sh 'pip list'
-                sh 'pip install --user -r requirements.txt'
-                sh 'python hello-world.py'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'for i in {1..5} do curl http://localhost done'
             }
         }
     }
