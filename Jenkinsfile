@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'python --version && id'
+                sh 'ps -ef'
             }
         }
         stage('Stage') {
