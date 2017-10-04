@@ -6,7 +6,7 @@ pipeline {
                 sh 'python --version && id'
             }
         }
-        stage('Stage') {
+        stage('Stage') { 
             steps {
                 sh 'python hello-world.py'
                 sh 'ps -ef'
