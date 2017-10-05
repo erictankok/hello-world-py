@@ -15,7 +15,7 @@ pipeline {
  	}
         stage('Test') {
             steps {
-                sh 'while ! curl --output /dev/null --silent --head --fail http://localhost; do sleep 1 && echo -n .; done'
+                sh 'while ! curl --output /dev/null --silent --head --fail http://localhost:8888; do sleep 1 && echo -n .; done'
             }
         }
     }
