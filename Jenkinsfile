@@ -6,7 +6,8 @@ pipeline {
    agent { 
         docker {
             image 'erictankok/docker:hello-world-py'
-            args '-p ${params.OS_PORT}:${params.CONTAINER_PORT}'
+            args '-p 8888:8888'
+            // args '-p ${params.OS_PORT}:${params.CONTAINER_PORT}'
         }
     }
     stages {
